@@ -24,5 +24,5 @@ class MyApp extends StatelessWidget {
 // TODO 0 make software architecture
 // TODO 1 implementation Theme class
 // TODO 2 make assets directory
-// TODO 3 change app icon
+// * Done TODO 3 change app icon
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
