@@ -12,10 +12,12 @@ class MyApp extends StatelessWidget {
       title: 'Lets link project',
       initialRoute: '/',
       routes: {
+        //
         //'/home' : (context) => HomePage(),
       },
       //theme: _letsTheme,
       //home: MyHomePage(title: 'Lets link project'),
+
     );
   }
 }
