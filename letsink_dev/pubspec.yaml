@@ -66,6 +66,9 @@ flutter:
     - family: Avenir
       fonts:
         - asset: assets/fonts/Avenir-Light.ttf
+        - asset: assets/fonts/Avenir-Bold.ttf
+        - asset: assets/fonts/Avenir-Regular.ttf
+
 
   # example:
   # fonts:
