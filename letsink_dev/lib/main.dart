@@ -46,11 +46,18 @@ class MyApp extends StatelessWidget {
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
 // * Done TODO 4-1 implementation LoginPage UI
 // TODO 4-2 implementation Firebase auth
-// TODO 4-2-0 implementation login Function
+// * Done TODO 4-2-0 implementation login Function
 //TODO 4-2-1 implementation with provider pattern state management
 // TODO 4-3 abstract Firestore interface
 // TODO 4-3 make Database document architecture
+// * Done TODO 4-3-0 make collection
+// TODO 4-3-1 implementation item class provider
+// TODO 4-4 implementation Dynamic link
 // * Done TODO 5 implementation native splash screen
 // TODO 6 implementation Write Page
 // TODO 7 implementation MainPage
-// TODO 7-1 implementation with Flex or Expanded
+// TODO 7-1 implementation ListView
+// TODO 7-2 implementation Card
+// * Done TODO 7-2-1 implementation call by number
+// TODO 7-2-2 Add Swiper
+// TODO 8 implementation Call by number

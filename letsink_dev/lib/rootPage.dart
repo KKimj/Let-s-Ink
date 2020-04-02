@@ -7,12 +7,12 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<FirebaseUser>(
-      builder: (BuildContext Context, AsyncSnapshot snapshot) {
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         if(snapshot.hasData) {
           return MainPage();
         }
         else {
-          return LoginPage();
+          return MainPage();
         }
       },
     );
