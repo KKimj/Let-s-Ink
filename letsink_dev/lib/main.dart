@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:letsinkdev/loginPage.dart';
 import 'package:letsinkdev/mainPage.dart';
 import 'package:letsinkdev/rootPage.dart';
@@ -12,14 +13,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lets link project',
+
+      title: 'Lets ink project',
       initialRoute: '/',
       routes: {
         //
         '/login': (context) => LoginPage(),
         '/home' : (context) => MainPage(),
       },
-      //theme: _letsTheme,
+      theme: ThemeData(
+        accentColor: const Color(0xFFF16876),
+        primaryColor: const Color(0xFFB3BFE7),
+        fontFamily: 'Avenir',
+        /*textTheme: TextTheme(
+          title: TextStyle(fontSize: 18.0, fontStyle: FontStyle.normal),
+          body1: TextStyle(fontSize: 14.0, fontStyle: FontStyle.normal)
+        )*/
+
+      ),
       home: RootPage(),
 
     );
@@ -29,7 +40,7 @@ class MyApp extends StatelessWidget {
 
 
 // TODO 0 make software architecture
-// TODO 1 implementation Theme class
+// * Done TODO 1 implementation Theme class
 // * Done TODO 2 make assets directory
 // * Done TODO 3 change app icon
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
