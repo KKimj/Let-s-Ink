@@ -30,6 +30,8 @@ dependencies:
   google_sign_in: ^4.3.0
   firebase_auth: ^0.15.5+3
 
+  provider: ^4.0.4
+
   #insert by Kim Jiun
 
 

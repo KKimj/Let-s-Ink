@@ -5,6 +5,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      drawer: Drawer(),
       body: Center(
         child: Text("Main Page", style: TextStyle(fontWeight: FontWeight.bold),),
       ),
