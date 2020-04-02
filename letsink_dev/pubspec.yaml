@@ -25,6 +25,8 @@ dependencies:
   flutter_redux: ^0.6.0
   flutter_redux_navigation: ^0.5.1
   rxdart: ^0.23.1
+  flutter_native_splash: ^0.1.9
+
 
   #insert by Kim Jiun
 
@@ -90,3 +92,7 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/app_icon.png"
+
+flutter_native_splash:
+  image: assets/images/splash_image.png
+  color: "B3BFE7"

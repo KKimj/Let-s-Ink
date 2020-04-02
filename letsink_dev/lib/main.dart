@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:letsinkdev/loginPage.dart';
+import 'package:letsinkdev/mainPage.dart';
+import 'package:letsinkdev/rootPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,15 +16,16 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         //
-        //
-        //'/home' : (context) => HomePage(),
+        '/login': (context) => LoginPage(),
+        '/home' : (context) => MainPage(),
       },
       //theme: _letsTheme,
-      //home: MyHomePage(title: 'Lets link project'),
+      home: RootPage(),
 
     );
   }
 }
+
 
 
 // TODO 0 make software architecture
@@ -29,3 +33,4 @@ class MyApp extends StatelessWidget {
 // * Done TODO 2 make assets directory
 // * Done TODO 3 change app icon
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
+// * Done TODO 5 implementation native splash screen
