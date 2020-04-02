@@ -1,4 +1,4 @@
-package com.example.letsinkdev
+package com.letsink.children
 
 import io.flutter.embedding.android.FlutterActivity
 

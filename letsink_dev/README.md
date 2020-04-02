@@ -1,6 +1,6 @@
-# letsinkdev
+# children
 
-A project to help young children. Please join us.
+Android-ios-web, cross-platform application for children. It executes with Flutter, Firebase.
 
 ## Getting Started
 

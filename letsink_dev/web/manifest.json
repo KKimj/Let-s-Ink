@@ -1,11 +1,11 @@
 {
-    "name": "letsinkdev",
-    "short_name": "letsinkdev",
+    "name": "children",
+    "short_name": "children",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A project to help young children. Please join us.",
+    "description": "Android-ios-web, cross-platform application for children. It executes with Flutter, Firebase.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -26,6 +26,7 @@ dependencies:
   flutter_redux_navigation: ^0.5.1
   rxdart: ^0.23.1
   flutter_native_splash: ^0.1.9
+  flutter_signin_button: ^1.0.0
 
 
   #insert by Kim Jiun

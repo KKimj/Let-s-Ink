@@ -44,4 +44,6 @@ class MyApp extends StatelessWidget {
 // * Done TODO 2 make assets directory
 // * Done TODO 3 change app icon
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
+// * Done TODO 4-1 implementation LoginPage UI
+// TODO 4-2 implementation Firebase auth
 // * Done TODO 5 implementation native splash screen

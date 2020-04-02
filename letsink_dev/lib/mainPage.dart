@@ -6,7 +6,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text("Main Page"),
+        child: Text("Main Page", style: TextStyle(fontWeight: FontWeight.bold),),
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),),
     );
