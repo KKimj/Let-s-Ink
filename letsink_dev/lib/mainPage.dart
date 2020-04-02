@@ -8,7 +8,9 @@ class MainPage extends StatelessWidget {
       body: Center(
         child: Text("Main Page", style: TextStyle(fontWeight: FontWeight.bold),),
       ),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),
+        onPressed: () {},
+      ),
     );
   }
 }

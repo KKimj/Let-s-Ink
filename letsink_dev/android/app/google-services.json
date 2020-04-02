@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "6090598768",
+    "firebase_url": "https://lets-ink-kids.firebaseio.com",
+    "project_id": "lets-ink-kids",
+    "storage_bucket": "lets-ink-kids.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6090598768:android:ec39eb1fe4a1d268acc7b5",
+        "android_client_info": {
+          "package_name": "com.letsink.children"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6090598768-9h789unlgj3hkunajuvi6pn1uo8jdkib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.letsink.children",
+            "certificate_hash": "6abc05d280049226fb24f153740c34fb6847d1ab"
+          }
+        },
+        {
+          "client_id": "6090598768-6mgq8q3a15v1i587m9ureg9jbkljfr9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-qV8Z8yLcp9eiqDXppSv-X1jv25EtJZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6090598768-6mgq8q3a15v1i587m9ureg9jbkljfr9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
