@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
 // TODO 7-1 implementation ListView
 // * Done TODO 7-1-1 implementation ListView.Builer
 // TODO 7-1-2 modify ListView Scroll
-// TODO 7-2 implementation Card
+// * Done TODO 7-2 implementation Card
 // * Done TODO 7-2-1 implementation call by number
 // * Done TODO 7-2-2 Add Swiper
 // TODO 7-2-3 sync Swiper Image with FireStore

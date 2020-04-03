@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -64,12 +65,28 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                    itemCount: 3,
-                    itemBuilder: (BuildContext context, int index)
-                    {
-                      return HomeCard();
+                child: StreamBuilder(
+                  stream: Firestore.instance.collection('test_items').snapshots(),
+
+                  builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if(!snapshot.hasData)
+                      {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    else {
+                      var items = snapshot.data.documents ?? [];
+                      return ListView.builder(
+                          itemCount: items.length,
+                          itemBuilder: (BuildContext context, int index)
+                          {
+                            return _HomeCard(context, items[index]);
+                          }
+                      );
                     }
+                  },
+
                 ),
               ),
             ],
@@ -83,25 +100,47 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-}
-
-/*
-Container(
-            height: 250,
-            child: new Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return new Image.network(
-                  "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
-                  fit: BoxFit.fill,
-                );
+  Widget _HomeCard(context, document) {
+    return Container(
+      height: 150,
+      child: Card(
+        semanticContainer: true,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              leading: Image.network(
+                document['thumbnail'], fit: BoxFit.fill,),
+              title: Text(document['title']),
+              subtitle: Text(document['description']),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                print('item2');
               },
-              itemCount: 3,
-              viewportFraction: 0.8,
-              scale: 0.9,
             ),
-          ),
-          HomeCard(),
- */
+
+            Row(
+              children: <Widget>[
+                Padding(padding: EdgeInsets.all(10),),
+                Text("눌러서 전화하기"),
+                FlatButton(
+                  child: Icon(Icons.call),
+                  onPressed: () => launch(document['tel']),
+                ),
+                Text(document['location']),
+              ],
+            ),
+          ],
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        elevation: 2,
+        margin: EdgeInsets.all(10),
+      ),
+    );
+  }
+}
 
 class HomeCard extends StatelessWidget {
   @override

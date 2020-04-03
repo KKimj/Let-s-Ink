@@ -20,8 +20,8 @@ class _WritePageState extends State<WritePage> {
     TextEditingController(),
     TextEditingController(),
     TextEditingController(),
-    TextEditingController(), // 제목
-    TextEditingController(), // 설명
+    TextEditingController(), // 제목 5
+    TextEditingController(), // 설명 6
 
   ];
 
@@ -32,6 +32,12 @@ class _WritePageState extends State<WritePage> {
     // TODO: implement dispose
     super.dispose();
     textEditingController[0].dispose();
+    textEditingController[1].dispose();
+    textEditingController[2].dispose();
+    textEditingController[3].dispose();
+    textEditingController[4].dispose();
+    textEditingController[5].dispose();
+    textEditingController[6].dispose();
 
   }
   @override
@@ -69,7 +75,7 @@ class _WritePageState extends State<WritePage> {
                       "name" : textEditingController[1].text,
                       "quantity" : textEditingController[2].text,
                       "location" : textEditingController[3].text,
-                      "owner" : textEditingController[0].text,
+                      "owner" : widget.user.displayName,
                       "thumbnail" : _url.toString(),
                       "images" : [
                         _url.toString()
@@ -87,14 +93,13 @@ class _WritePageState extends State<WritePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _image == null ? Text('이미지 업로드 해주세요.') : Image.file(_image),
-            Text('Write Page'),
-            TextField(
-              decoration: InputDecoration(hintText: '사용자 이름을 입력하세요.'),
-              controller: textEditingController[0],
+            Container(
+                child: Center(child: _image == null ? Text('이미지 업로드 해주세요.') : Image.file(_image)),
+              height: 150,
+              color: Colors.black12,
             ),
             TextField(
-              decoration: InputDecoration(hintText: '필요한 물품을 바로 알수 있는 제목을 입력하세요.'),
+              decoration: InputDecoration(hintText: '필요한 물품을 바로 알 수 있는 제목을 입력하세요.'),
               controller: textEditingController[5],
             ),
             TextField(
