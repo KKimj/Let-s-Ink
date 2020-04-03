@@ -3,6 +3,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:letsinkdev/mainPage.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -29,7 +30,8 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: ()
               {
               _handleSignIn().then((user) {
-              print(user);
+                print(user);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage(user)));
               });
               },
             ),
