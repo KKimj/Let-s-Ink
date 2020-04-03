@@ -21,10 +21,6 @@ dependencies:
     sdk: flutter
 
   flutter_launcher_icons: ^0.7.4
-  redux: ^4.0.0
-  flutter_redux: ^0.6.0
-  flutter_redux_navigation: ^0.5.1
-  rxdart: ^0.23.1
   flutter_native_splash: ^0.1.9
   flutter_signin_button: ^1.0.0
   google_sign_in: ^4.3.0
@@ -36,6 +32,10 @@ dependencies:
 
   #insert by Kim Jiun
 
+  redux: ^4.0.0
+  flutter_redux: ^0.6.0
+  flutter_redux_navigation: ^0.5.1
+  rxdart: ^0.23.1
 
 
   cupertino_icons: ^0.1.3

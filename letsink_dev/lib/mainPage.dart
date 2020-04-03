@@ -1,55 +1,76 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:letsinkdev/writePage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatefulWidget {
+  final FirebaseUser user;
+  MainPage(this.user);
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Let's Ink", style: TextStyle(fontWeight: FontWeight.normal),
-        ),
-      ),
-      drawer: Drawer(),
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 250,
-            child: new Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return new Image.network(
-                  "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
-                  fit: BoxFit.fill,
-                );
-              },
-              itemCount: 3,
-              viewportFraction: 0.8,
-              scale: 0.9,
+    return Container(
+      color: Color(0xFFB3BFE7),
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text("Let's Ink", style: TextStyle(fontWeight: FontWeight.normal),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (BuildContext context, int index)
+          drawer: Drawer(
+            child: Center(
+              child: RaisedButton(
+                child: Text('Log Out'),
+                onPressed: ()
                 {
-                  return HomeCard();
-                }
+                  FirebaseAuth.instance.signOut();
+                  _googleSignIn.signOut();
+                },
+              ),
             ),
           ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),
-        onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>WritePage()));
-        },
+          body: Column(
+            children: <Widget>[
+              Container(
+                height: 250,
+                child: new Swiper(
+                  itemBuilder: (BuildContext context, int index) {
+                    return new Image.network(
+                      "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
+                      fit: BoxFit.fill,
+                    );
+                  },
+                  itemCount: 3,
+                  viewportFraction: 0.8,
+                  scale: 0.9,
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: 3,
+                    itemBuilder: (BuildContext context, int index)
+                    {
+                      return HomeCard();
+                    }
+                ),
+              ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),
+            onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>WritePage()));
+            },
+          ),
+        ),
       ),
     );
   }

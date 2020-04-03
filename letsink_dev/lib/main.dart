@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         //
         '/login': (context) => LoginPage(),
-        '/home' : (context) => MainPage(),
+        '/home' : (context) => MainPage(null),
       },
       theme: ThemeData(
         accentColor: const Color(0xFFF16876),
@@ -64,3 +64,4 @@ class MyApp extends StatelessWidget {
 // * Done TODO 7-2-2 Add Swiper
 // TODO 7-2-3 sync Swiper Image with FireStore
 // * Done TODO 8 implementation Call by number
+// * Done TODO 9 use SafeArea Widget
