@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
 // * Done TODO 4-1 implementation LoginPage UI
 // TODO 4-2 implementation Firebase auth
 // * Done TODO 4-2-0 implementation login Function
-//TODO 4-2-1 implementation with provider pattern state management
+// TODO 4-2-1 implementation with provider pattern state management
 // TODO 4-3 abstract Firestore interface
 // TODO 4-3 make Database document architecture
 // * Done TODO 4-3-0 make collection
@@ -57,7 +57,10 @@ class MyApp extends StatelessWidget {
 // TODO 6 implementation Write Page
 // TODO 7 implementation MainPage
 // TODO 7-1 implementation ListView
+// * Done TODO 7-1-1 implementation ListView.Builer
+// TODO 7-1-2 modify ListView Scroll
 // TODO 7-2 implementation Card
 // * Done TODO 7-2-1 implementation call by number
-// TODO 7-2-2 Add Swiper
-// TODO 8 implementation Call by number
+// * Done TODO 7-2-2 Add Swiper
+// TODO 7-2-3 sync Swiper Image with FireStore
+// * Done TODO 8 implementation Call by number

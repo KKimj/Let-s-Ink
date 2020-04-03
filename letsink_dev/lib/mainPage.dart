@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:letsinkdev/writePage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatefulWidget {
@@ -17,105 +19,100 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       drawer: Drawer(),
-      body: Container(
-        child: ListView(
-          children: <Widget>[
-            Swiper(
-                itemBuilder: (BuildContext context,int index){
-                  return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
-                },
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 250,
+            child: new Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return new Image.network(
+                  "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
+                  fit: BoxFit.fill,
+                );
+              },
+              itemCount: 3,
+              viewportFraction: 0.8,
+              scale: 0.9,
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
                 itemCount: 3,
-                pagination: new SwiperPagination(),
-                control: new SwiperControl()
+                itemBuilder: (BuildContext context, int index)
+                {
+                  return HomeCard();
+                }
             ),
-            Container(
-              height: 150,
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      leading: Image.network(
-                        'https://placeimg.com/640/480/any', fit: BoxFit.fill,),
-                      title: Text('도서1'),
-                      subtitle: Text('도와주세요!1'),
-                      trailing: Icon(Icons.keyboard_arrow_right),
-                      onTap: () {
-                        print('item2');
-                      },
-                    ),
-
-                    Row(
-                      children: <Widget>[
-                        Padding(padding: EdgeInsets.all(10),),
-                        Text("눌러서 전화하기"),
-                        FlatButton(
-                          child: Icon(Icons.call),
-                          onPressed: () => launch("tel://01073313920"),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 5,
-                margin: EdgeInsets.all(10),
-              ),
-            ),
-            Container(
-              height: 150,
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: ListTile(
-                  leading: Image.network(
-                    'https://placeimg.com/640/480/any', fit: BoxFit.fill,),
-                  title: Text('도서2'),
-                  subtitle: Text('도와주세요!2'),
-                  trailing: Icon(Icons.keyboard_arrow_right),
-                  onTap: () {
-                    print('item2');
-                  },
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 5,
-                margin: EdgeInsets.all(10),
-              ),
-            ),
-            Container(
-              height: 150,
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: ListTile(
-                  leading: Image.network(
-                    'https://placeimg.com/640/480/any', fit: BoxFit.fill,),
-                  title: Text('도서3'),
-                  subtitle: Text('도와주세요!3'),
-                  trailing: Icon(Icons.keyboard_arrow_right),
-                  onTap: () {
-                    print('item2');
-                  },
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 5,
-                margin: EdgeInsets.all(10),
-              ),
-            ),
-          ],
-        )
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),
-        onPressed: () {},
+        onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>WritePage()));
+        },
       ),
     );
   }
 }
 
+/*
+Container(
+            height: 250,
+            child: new Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return new Image.network(
+                  "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
+                  fit: BoxFit.fill,
+                );
+              },
+              itemCount: 3,
+              viewportFraction: 0.8,
+              scale: 0.9,
+            ),
+          ),
+          HomeCard(),
+ */
+
+class HomeCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: Card(
+        semanticContainer: true,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              leading: Image.network(
+                'https://placeimg.com/640/480/any', fit: BoxFit.fill,),
+              title: Text('도서1_1'),
+              subtitle: Text('도와주세요!1'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                print('item2');
+              },
+            ),
+
+            Row(
+              children: <Widget>[
+                Padding(padding: EdgeInsets.all(10),),
+                Text("눌러서 전화하기"),
+                FlatButton(
+                  child: Icon(Icons.call),
+                  onPressed: () => launch("tel://01073313920"),
+                ),
+                Text("인천 서구"),
+              ],
+            ),
+          ],
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        elevation: 2,
+        margin: EdgeInsets.all(10),
+      ),
+    );
+  }
+}
