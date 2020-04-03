@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
 
 
 
-// TODO 0 make software architecture
+// * Postpone TODO 0 make software architecture
 // * Done TODO 1 implementation Theme class
 // * Done TODO 2 make assets directory
 // * Done TODO 3 change app icon
@@ -55,13 +55,13 @@ class MyApp extends StatelessWidget {
 // TODO 4-4 implementation Dynamic link
 // * Done TODO 5 implementation native splash screen
 // * Done TODO 6 implementation Write Page
-// TODO 7 implementation MainPage
-// TODO 7-1 implementation ListView
+// * Done TODO 7 implementation MainPage
+// * Done TODO 7-1 implementation ListView
 // * Done TODO 7-1-1 implementation ListView.Builer
-// TODO 7-1-2 modify ListView Scroll
+// * Postpone TODO 7-1-2 modify ListView Scroll
 // * Done TODO 7-2 implementation Card
 // * Done TODO 7-2-1 implementation call by number
 // * Done TODO 7-2-2 Add Swiper
-// TODO 7-2-3 sync Swiper Image with FireStore
+// * Done TODO 7-2-3 sync Swiper Image with FireStore
 // * Done TODO 8 implementation Call by number
 // * Done TODO 9 use SafeArea Widget

@@ -99,22 +99,27 @@ class _WritePageState extends State<WritePage> {
               color: Colors.black12,
             ),
             TextField(
+              key: UniqueKey(),
               decoration: InputDecoration(hintText: '필요한 물품을 바로 알 수 있는 제목을 입력하세요.'),
               controller: textEditingController[5],
             ),
             TextField(
+              key: UniqueKey(),
               decoration: InputDecoration(hintText: '설명을 입력하세요.'),
               controller: textEditingController[6],
             ),
             TextField(
+              key: UniqueKey(),
               decoration: InputDecoration(hintText: '물품 개수를 입력하세요.'),
               controller: textEditingController[2],
             ),
             TextField(
+              key: UniqueKey(),
               decoration: InputDecoration(hintText: '위치를 입력하세요.'),
               controller: textEditingController[3],
             ),
             TextField(
+              key: UniqueKey(),
               decoration: InputDecoration(hintText: '전화번호를 입력하세요.'),
               controller: textEditingController[4],
             ),

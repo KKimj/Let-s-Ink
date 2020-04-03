@@ -16,6 +16,16 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final ImageList = ['https://childrens.advil.com/sites/default/files/children-slide-11.jpg', 'https://www.newstap.co.kr/news/photo/201901/82107_133090_1856.jpg'];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var _snapshot = Firestore.instance.collection('test_swiper').snapshots();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,19 +60,32 @@ class _MainPageState extends State<MainPage> {
           ),
           body: Column(
             children: <Widget>[
-              Container(
-                height: 250,
-                child: new Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return new Image.network(
-                      "https://childrens.advil.com/sites/default/files/children-slide-11.jpg",
-                      fit: BoxFit.fill,
-                    );
-                  },
-                  itemCount: 3,
-                  viewportFraction: 0.8,
-                  scale: 0.9,
-                ),
+              StreamBuilder(
+                stream: Firestore.instance.collection('test_swiper').snapshots(),
+                builder: (context, snapshot) {
+                  if(!snapshot.hasData)
+                    {
+                      return Container(
+                        height: 250,
+                          child: Center(child: CircularProgressIndicator(),),
+                      );
+                    }
+                  var images = snapshot.data.documents ?? [];
+                  return Container(
+                    height: 250,
+                    child: new Swiper(
+                      itemBuilder: (BuildContext context, int index) {
+                        return new Image.network(
+                          (images[index])['image'],
+                          fit: BoxFit.fill,
+                        );
+                      },
+                      itemCount: images.length,
+                      viewportFraction: 0.8,
+                      scale: 0.9,
+                    ),
+                  );
+                }
               ),
               Expanded(
                 child: StreamBuilder(
@@ -102,6 +125,7 @@ class _MainPageState extends State<MainPage> {
   }
   Widget _HomeCard(context, document) {
     return Container(
+      key: UniqueKey(),
       height: 150,
       child: Card(
         semanticContainer: true,
@@ -122,12 +146,17 @@ class _MainPageState extends State<MainPage> {
             Row(
               children: <Widget>[
                 Padding(padding: EdgeInsets.all(10),),
+                Text('필요한 개수 : '+ document['quantity']),
+                Padding(padding: EdgeInsets.all(10),),
+                Text(document['location']),
+                Padding(padding: EdgeInsets.all(10),),
+                Text(document['owner']),
+                Padding(padding: EdgeInsets.all(10),),
                 Text("눌러서 전화하기"),
                 FlatButton(
                   child: Icon(Icons.call),
-                  onPressed: () => launch(document['tel']),
+                  onPressed: () => launch('tel://'+document['tel']),
                 ),
-                Text(document['location']),
               ],
             ),
           ],

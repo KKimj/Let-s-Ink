@@ -1,10 +1,10 @@
 {
-    "name": "children",
-    "short_name": "children",
+    "name": "Lets Ink Project",
+    "short_name": "Lets Ink",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "theme_color": "#B3BFE7",
     "description": "Android-ios-web, cross-platform application for children. It executes with Flutter, Firebase.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
