@@ -27,15 +27,24 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           drawer: Drawer(
-            child: Center(
-              child: RaisedButton(
-                child: Text('Log Out'),
-                onPressed: ()
-                {
-                  FirebaseAuth.instance.signOut();
-                  _googleSignIn.signOut();
-                },
-              ),
+            child: Column(
+              children: <Widget>[
+                DrawerHeader(child: Column(
+                  children: <Widget>[
+                    CircleAvatar(backgroundImage: NetworkImage(widget.user.photoUrl),),
+                    Text(widget.user.displayName),
+                    Text(widget.user.phoneNumber),
+                  ],
+                )),
+                RaisedButton(
+                  child: Text('Log Out'),
+                  onPressed: ()
+                  {
+                    FirebaseAuth.instance.signOut();
+                    _googleSignIn.signOut();
+                  },
+                ),
+              ],
             ),
           ),
           body: Column(
@@ -67,7 +76,7 @@ class _MainPageState extends State<MainPage> {
           ),
           floatingActionButton: FloatingActionButton(child: Icon(Icons.add_circle),
             onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>WritePage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>WritePage(widget.user)));
             },
           ),
         ),

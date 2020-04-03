@@ -45,11 +45,11 @@ class MyApp extends StatelessWidget {
 // * Done TODO 3 change app icon
 // TODO 4 implementation with Firebase ( e.g., Firestore, Dynamic links, auth )
 // * Done TODO 4-1 implementation LoginPage UI
-// TODO 4-2 implementation Firebase auth
+// * Done TODO 4-2 implementation Firebase auth
 // * Done TODO 4-2-0 implementation login Function
 // * Postpone TODO 4-2-1 implementation with provider pattern state management
-// TODO 4-3 abstract Firestore interface
-// TODO 4-3 make Database document architecture
+// * Done TODO 4-3 abstract Firestore interface
+// * Done TODO 4-3 make Database document architecture
 // * Done TODO 4-3-0 make collection
 // * Postpone TODO 4-3-1 implementation item class provider
 // TODO 4-4 implementation Dynamic link
