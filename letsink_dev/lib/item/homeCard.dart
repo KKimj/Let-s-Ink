@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 Widget HomeCard(context, document) {
   return Container(
     key: UniqueKey(),
-    height: 200,
+    height: 180,
     child: Card(
       semanticContainer: true,
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -15,24 +15,26 @@ Widget HomeCard(context, document) {
             leading: Image.network(
               document['thumbnail'], fit: BoxFit.fill,),
             title: Text(document['title']),
-            subtitle: Text(document['description']),
+            subtitle: Column(
+              children: <Widget>[
+                Text(document['description']),
+                Row(
+                  children: <Widget>[
+                    Text('필요한 개수 : '+ document['quantity']),
+                    Padding(padding: EdgeInsets.all(10),),
+                    Text(document['location']),
+                    Padding(padding: EdgeInsets.all(10),),
+
+                  ],
+                ),
+              ],
+            ),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               print('item2');
             },
           ),
-
-          Row(
-            children: <Widget>[
-              Padding(padding: EdgeInsets.all(10),),
-              Text('필요한 개수 : '+ document['quantity']),
-              Padding(padding: EdgeInsets.all(10),),
-              Text(document['location']),
-              Padding(padding: EdgeInsets.all(10),),
-
-            ],
-          ),
-          Padding(padding: EdgeInsets.all(5)),
+          Padding(padding: EdgeInsets.all(8)),
           Row(
             children: <Widget>[
               Padding(padding: EdgeInsets.all(10),),
