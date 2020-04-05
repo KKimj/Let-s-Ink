@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:letsinkdev/item/homeCard.dart';
 import 'package:letsinkdev/writePage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -104,7 +105,7 @@ class _MainPageState extends State<MainPage> {
                           itemCount: items.length,
                           itemBuilder: (BuildContext context, int index)
                           {
-                            return _HomeCard(context, items[index]);
+                            return HomeCard(context, items[index]);
                           }
                       );
                     }
@@ -120,96 +121,6 @@ class _MainPageState extends State<MainPage> {
             },
           ),
         ),
-      ),
-    );
-  }
-  Widget _HomeCard(context, document) {
-    return Container(
-      key: UniqueKey(),
-      height: 150,
-      child: Card(
-        semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              leading: Image.network(
-                document['thumbnail'], fit: BoxFit.fill,),
-              title: Text(document['title']),
-              subtitle: Text(document['description']),
-              trailing: Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                print('item2');
-              },
-            ),
-
-            Row(
-              children: <Widget>[
-                Padding(padding: EdgeInsets.all(10),),
-                Text('필요한 개수 : '+ document['quantity']),
-                Padding(padding: EdgeInsets.all(10),),
-                Text(document['location']),
-                Padding(padding: EdgeInsets.all(10),),
-                Text(document['owner']),
-                Padding(padding: EdgeInsets.all(10),),
-                Text("눌러서 전화하기"),
-                FlatButton(
-                  child: Icon(Icons.call),
-                  onPressed: () => launch('tel://'+document['tel']),
-                ),
-              ],
-            ),
-          ],
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        elevation: 2,
-        margin: EdgeInsets.all(10),
-      ),
-    );
-  }
-}
-
-class HomeCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      child: Card(
-        semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              leading: Image.network(
-                'https://placeimg.com/640/480/any', fit: BoxFit.fill,),
-              title: Text('도서1_1'),
-              subtitle: Text('도와주세요!1'),
-              trailing: Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                print('item2');
-              },
-            ),
-
-            Row(
-              children: <Widget>[
-                Padding(padding: EdgeInsets.all(10),),
-                Text("눌러서 전화하기"),
-                FlatButton(
-                  child: Icon(Icons.call),
-                  onPressed: () => launch("tel://01073313920"),
-                ),
-                Text("인천 서구"),
-              ],
-            ),
-          ],
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        elevation: 2,
-        margin: EdgeInsets.all(10),
       ),
     );
   }
