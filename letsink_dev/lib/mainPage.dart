@@ -102,6 +102,7 @@ class _MainPageState extends State<MainPage> {
                     else {
                       var items = snapshot.data.documents ?? [];
                       return ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: items.length,
                           itemBuilder: (BuildContext context, int index)
                           {
