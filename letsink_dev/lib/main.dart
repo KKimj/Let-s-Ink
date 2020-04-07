@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         //
         '/login': (context) => LoginPage(),
         '/home' : (context) => MainPage(null),
+//	'/post' : (context) => PostPage(),
       },
       theme: ThemeData(
         accentColor: const Color(0xFFF16876),
