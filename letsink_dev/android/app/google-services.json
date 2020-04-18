@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "6090598768-9h789unlgj3hkunajuvi6pn1uo8jdkib.apps.googleusercontent.com",
+          "client_id": "6090598768-5ftveahaeutijla3r8isg2ojurbfm9ah.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.letsink.children",
-            "certificate_hash": "6abc05d280049226fb24f153740c34fb6847d1ab"
+            "certificate_hash": "9754ae7b122767a810a64075c911e9a5e60acc9b"
           }
         },
         {

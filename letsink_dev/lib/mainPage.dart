@@ -61,33 +61,7 @@ class _MainPageState extends State<MainPage> {
           ),
           body: Column(
             children: <Widget>[
-              StreamBuilder(
-                stream: Firestore.instance.collection('test_swiper').snapshots(),
-                builder: (context, snapshot) {
-                  if(!snapshot.hasData)
-                    {
-                      return Container(
-                        height: 250,
-                          child: Center(child: CircularProgressIndicator(),),
-                      );
-                    }
-                  var images = snapshot.data.documents ?? [];
-                  return Container(
-                    height: 250,
-                    child: new Swiper(
-                      itemBuilder: (BuildContext context, int index) {
-                        return new Image.network(
-                          (images[index])['image'],
-                          fit: BoxFit.fill,
-                        );
-                      },
-                      itemCount: images.length,
-                      viewportFraction: 0.8,
-                      scale: 0.9,
-                    ),
-                  );
-                }
-              ),
+
               Expanded(
                 child: StreamBuilder(
                   stream: Firestore.instance.collection('test_items').snapshots(),
@@ -102,11 +76,43 @@ class _MainPageState extends State<MainPage> {
                     else {
                       var items = snapshot.data.documents ?? [];
                       return ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: items.length,
+                          //physics: NeverScrollableScrollPhysics(),
+                          itemCount: items.length+1,
                           itemBuilder: (BuildContext context, int index)
                           {
-                            return HomeCard(context, items[index]);
+                            if(index == 0)
+                              {
+                                return StreamBuilder(
+                                    stream: Firestore.instance.collection('test_swiper').snapshots(),
+                                    builder: (context, snapshot) {
+                                      if(!snapshot.hasData)
+                                      {
+                                        return Container(
+                                          height: 250,
+                                          child: Center(child: CircularProgressIndicator(),),
+                                        );
+                                      }
+                                      var images = snapshot.data.documents ?? [];
+                                      return Container(
+                                        height: 250,
+                                        child: new Swiper(
+                                          itemBuilder: (BuildContext context, int index) {
+                                            return new Image.network(
+                                              (images[index])['image'],
+                                              fit: BoxFit.fill,
+                                            );
+                                          },
+                                          itemCount: images.length,
+                                          viewportFraction: 0.8,
+                                          scale: 0.9,
+                                        ),
+                                      );
+                                    }
+                                );
+                              }
+                            else {
+                              return HomeCard(context, items[index-1]);
+                            }
                           }
                       );
                     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:letsinkdev/loginPage.dart';
 import 'package:letsinkdev/mainPage.dart';
+import 'package:letsinkdev/root.dart';
 import 'package:letsinkdev/rootPage.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         )*/
 
       ),
-      home: RootPage(),
+      home: Root(),
 
     );
   }

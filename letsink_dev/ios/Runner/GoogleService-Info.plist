@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>6090598768-t2b2gshrkdcel36u36n0uhopbetv9oqn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.6090598768-t2b2gshrkdcel36u36n0uhopbetv9oqn</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>6090598768-5ftveahaeutijla3r8isg2ojurbfm9ah.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCR-ilX1edvvgP2n0VKRPK_FVDdvqlJam8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>6090598768</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.letsink.children</string>
+	<key>PROJECT_ID</key>
+	<string>lets-ink-kids</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lets-ink-kids.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:6090598768:ios:d3b52019bdc8b915acc7b5</string>
+	<key>DATABASE_URL</key>
+	<string>https://lets-ink-kids.firebaseio.com</string>
+</dict>
+</plist>

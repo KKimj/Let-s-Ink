@@ -14,10 +14,37 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
 
-  <title>Lets Ink</title>
+  <title>Let's Ink</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.1/firebase-storage.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDT8m_JvyzMXImlkh8OOBpN3LkRv0qBBfo",
+      authDomain: "lets-ink-kids.firebaseapp.com",
+      databaseURL: "https://lets-ink-kids.firebaseio.com",
+      projectId: "lets-ink-kids",
+      storageBucket: "lets-ink-kids.appspot.com",
+      messagingSenderId: "6090598768",
+      appId: "1:6090598768:web:cfb9563c2cc0fea8acc7b5",
+      measurementId: "G-X9ZHXHQZEX"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -28,6 +55,6 @@
       });
     }
   </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+  <script defer src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
