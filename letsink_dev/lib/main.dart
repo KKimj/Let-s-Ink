@@ -4,6 +4,9 @@ import 'package:letsinkdev/loginPage.dart';
 import 'package:letsinkdev/mainPage.dart';
 import 'package:letsinkdev/root.dart';
 import 'package:letsinkdev/rootPage.dart';
+import 'package:provider/provider.dart';
+
+import 'model/authProvider.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,28 +16,34 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<AuthProvider>( create: (_) => AuthProvider(),),
+        ],
+        child:
+          MaterialApp(
 
-      title: 'Lets ink project',
-      initialRoute: '/',
-      routes: {
-        //
-        '/login': (context) => LoginPage(),
-        '/home' : (context) => MainPage(null),
-//	'/post' : (context) => PostPage(),
-      },
-      theme: ThemeData(
-        accentColor: const Color(0xFFF16876),
-        primaryColor: const Color(0xFFB3BFE7),
-        fontFamily: 'Avenir',
-        /*textTheme: TextTheme(
-          title: TextStyle(fontSize: 18.0, fontStyle: FontStyle.normal),
-          body1: TextStyle(fontSize: 14.0, fontStyle: FontStyle.normal)
-        )*/
+            title: 'Lets ink project',
+            initialRoute: '/',
+            routes: {
+              //
+              '/login': (context) => LoginPage(),
+              '/home' : (context) => MainPage(),
+      //	'/post' : (context) => PostPage(),
+            },
+            theme: ThemeData(
+              accentColor: const Color(0xFFF16876),
+              primaryColor: const Color(0xFFB3BFE7),
+              fontFamily: 'Avenir',
+              /*textTheme: TextTheme(
+                title: TextStyle(fontSize: 18.0, fontStyle: FontStyle.normal),
+                body1: TextStyle(fontSize: 14.0, fontStyle: FontStyle.normal)
+              )*/
 
-      ),
-      home: Root(),
+            ),
+            home: RootPage(),
 
+          ),
     );
   }
 }
@@ -67,3 +76,7 @@ class MyApp extends StatelessWidget {
 // * Done TODO 7-2-3 sync Swiper Image with FireStore
 // * Done TODO 8 implementation Call by number
 // * Done TODO 9 use SafeArea Widget
+// * Done TODO 10 refactoring with Provider
+// TODO 11 develop for web
+// TODO 12 develop for ios, firestore sync
+// TODO 13 implementation logout function

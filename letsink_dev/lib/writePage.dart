@@ -5,10 +5,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+
+import 'model/authProvider.dart';
 
 class WritePage extends StatefulWidget {
-  final FirebaseUser user;
-  WritePage(this.user);
+
   @override
   _WritePageState createState() => _WritePageState();
 }
@@ -42,6 +44,9 @@ class _WritePageState extends State<WritePage> {
   }
   @override
   Widget build(BuildContext context) {
+
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_a_photo),
@@ -56,7 +61,7 @@ class _WritePageState extends State<WritePage> {
               final firebaseStorageRef = FirebaseStorage.instance
                   .ref()
                   .child('test_items')
-                  .child('${DateTime.now().millisecondsSinceEpoch}${widget.user.email}');
+                  .child('${DateTime.now().millisecondsSinceEpoch}${authProvider.user.email}');
               final task = firebaseStorageRef.putFile(
                   _image, StorageMetadata(contentType: 'image/png'));
               task.onComplete.then((value)
@@ -75,7 +80,7 @@ class _WritePageState extends State<WritePage> {
                       "name" : textEditingController[1].text,
                       "quantity" : textEditingController[2].text,
                       "location" : textEditingController[3].text,
-                      "owner" : widget.user.displayName,
+                      "owner" : authProvider.user.displayName,
                       "thumbnail" : _url.toString(),
                       "images" : [
                         _url.toString()
