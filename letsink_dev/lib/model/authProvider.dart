@@ -7,7 +7,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthProvider with ChangeNotifier {
   FirebaseUser user;
   StreamSubscription userAuthSub;
-
+// final GoogleSignIn _googleSignIn = GoogleSignIn();
+// TODO Logout 기능을 위해 포함시켜야 하는가?
   AuthProvider() {
     userAuthSub =   FirebaseAuth.instance.onAuthStateChanged.listen((newUser) {
       print('AuthProvider - FirebaseAuth - onAuthStateChanged - $newUser');
